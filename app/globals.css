@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -47,4 +47,28 @@ button {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
+/* styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --darkBrown: #5c4033;
+  --offWhite: #f7f5f2;
+  --lightAmber: #ffbf00;
+  --darkSlateGray: #2f4f4f;
+  --fg: #5c4033;
+  --bg: #2f4f4f;
+}
+
+.dark {
+  --fg: red;
+  --bg: #5c4033;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
 }

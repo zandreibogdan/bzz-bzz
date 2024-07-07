@@ -1,3 +1,5 @@
+// components/NavLink.tsx
+
 import Link from "next/link";
 
 interface NavLinkProps {
@@ -5,7 +7,8 @@ interface NavLinkProps {
   text: string;
   mobile?: boolean;
 }
-const Navlink: React.FC<NavLinkProps> = ({ href, text, mobile }) => {
+
+const NavLink: React.FC<NavLinkProps> = ({ href, text, mobile }) => {
   return (
     <Link href={href}>
       <div
@@ -19,4 +22,4 @@ const Navlink: React.FC<NavLinkProps> = ({ href, text, mobile }) => {
   );
 };
 
-export default Navlink;
+export default NavLink;

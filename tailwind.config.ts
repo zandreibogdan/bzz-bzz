@@ -6,6 +6,7 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -14,6 +15,14 @@ const config: Config = {
         lightAmber: "#FFECB3",
         offWhite: "#F5F5F5",
         darkSlateGray: "#2E2E2E",
+        background: {
+          light: "#ffffff",
+          dark: "#ff69b4", // Set dark mode background to pink
+        },
+        text: {
+          light: "#000000",
+          dark: "#ffffff",
+        },
       },
     },
   },

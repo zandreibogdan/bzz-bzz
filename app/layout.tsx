@@ -18,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider>
+      <body className=" min-h-dvh">
+        <ThemeProvider attribute="class">
           <Navbar />
           {children}
         </ThemeProvider>

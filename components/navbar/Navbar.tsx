@@ -1,42 +1,32 @@
-// app/components/Navbar.tsx
+// components/Navbar.tsx
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import Navlink from "./Navlink";
+import NavLink from "./Navlink";
 
-// Define types for props
-
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const [mounted, setMounted] = useState(false); // Track if component has mounted
-  const [currentTheme, setCurrentTheme] = useState(theme);
-
-  useEffect(() => {
-    setMounted(true); // Component has mounted
-    setCurrentTheme(theme); // Set initial theme
-
-    return () => setMounted(false); // Clean up
-  }, []);
-
   const toggleTheme = () => {
-    const newTheme = currentTheme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    setCurrentTheme(newTheme); // Update current theme state
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
-  // Wait until component mounts before rendering
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   if (!mounted) return null;
 
   return (
-    <nav className="bg-darkBrown text-offWhite">
+    <nav className="dark:bg-honeyYellow">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -83,15 +73,16 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex-shrink-0">
-              <Link href="/">
-                <div className="text-offWhite text-xl font-bold">Your Logo</div>
+              <Link href="/" className="text-offWhite text-xl font-bold">
+                <div>Your Logo</div>
               </Link>
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <Navlink href="/" text="Home" />
-                <Navlink href="/products" text="Products" />
-                <Navlink href="/about" text="About" />
+                <NavLink href="/" text="Home" />
+                <NavLink href="/products" text="Products" />
+                <NavLink href="/services" text="Services" />
+                <NavLink href="/pages" text="Pages" />
               </div>
             </div>
           </div>
@@ -108,9 +99,10 @@ const Navbar: React.FC = () => {
 
       <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Navlink href="/" text="Home" mobile />
-          <Navlink href="/products" text="Products" mobile />
-          <Navlink href="/about" text="About" mobile />
+          <NavLink href="/" text="Home" mobile />
+          <NavLink href="/products" text="Products" mobile />1
+          <NavLink href="/services" text="Services" mobile />
+          <NavLink href="/pages" text="Pages" mobile />
         </div>
       </div>
     </nav>
