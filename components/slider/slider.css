@@ -1,0 +1,51 @@
+/* styles/slider.css */
+
+.custom-dots {
+  display: flex !important;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+.custom-dots li {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.custom-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 16px;
+  height: 16px;
+  padding: 4px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.custom-dots li button:before {
+  font-size: 16px;
+  line-height: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  content: "•";
+  text-align: center;
+  color: var(--secondary); /* Customize the default color */
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.custom-dots li.slick-active button:before {
+  color: var(--primary); /* Customize the active dot color */
+  opacity: 1;
+}

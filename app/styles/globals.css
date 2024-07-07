@@ -50,25 +50,23 @@ button {
 } */
 
 /* styles/globals.css */
+
+@import "../../components/slider/slider.css";
+@import "./variables.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --darkBrown: #5c4033;
-  --offWhite: #f7f5f2;
-  --lightAmber: #ffbf00;
-  --darkSlateGray: #2f4f4f;
-  --fg: #5c4033;
-  --bg: #2f4f4f;
-}
-
-.dark {
-  --fg: red;
-  --bg: #5c4033;
-}
-
 body {
-  background-color: var(--bg);
-  color: var(--fg);
+  color: var(--text);
+  background-color: var(--background);
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  background: #eee;
+  border: 1px solid #ddd;
 }

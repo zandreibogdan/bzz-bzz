@@ -10,19 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        honeyYellow: "#FFC107",
-        darkBrown: "#3E2723",
-        lightAmber: "#FFECB3",
-        offWhite: "#F5F5F5",
-        darkSlateGray: "#2E2E2E",
-        background: {
-          light: "#ffffff",
-          dark: "#ff69b4", // Set dark mode background to pink
-        },
-        text: {
-          light: "#000000",
-          dark: "#ffffff",
-        },
+        text: "var(--text)",
+        background: "var(--background)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        accent: "var(--accent)",
       },
     },
   },

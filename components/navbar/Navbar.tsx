@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import NavLink from "./Navlink";
+import { MdSunny } from "react-icons/md";
+import { FaMoon } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,7 +93,7 @@ const Navbar = () => {
               onClick={toggleTheme}
               className="bg-darkBrown hover:bg-darkSlateGray text-offWhite font-medium py-2 px-4 rounded-md transition duration-300"
             >
-              Toggle {theme === "light" ? "Dark" : "Light"} Mode
+              {theme === "light" ? <FaMoon /> : <MdSunny />}
             </button>
           </div>
         </div>
