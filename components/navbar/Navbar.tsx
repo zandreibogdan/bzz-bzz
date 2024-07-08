@@ -28,7 +28,7 @@ const Navbar = () => {
   if (!mounted) return null;
 
   return (
-    <nav className="dark:bg-honeyYellow">
+    <nav className="bg-background w-full shadow-lg z-10 fixed top-0">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -88,7 +88,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="hidden sm:flex sm:items-center sm:ml-6">
+          <div className=" sm:flex sm:items-center sm:ml-6">
             <button
               onClick={toggleTheme}
               className="bg-darkBrown hover:bg-darkSlateGray text-offWhite font-medium py-2 px-4 rounded-md transition duration-300"
@@ -102,7 +102,7 @@ const Navbar = () => {
       <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           <NavLink href="/" text="Home" mobile />
-          <NavLink href="/products" text="Products" mobile />1
+          <NavLink href="/products" text="Products" mobile />
           <NavLink href="/services" text="Services" mobile />
           <NavLink href="/pages" text="Pages" mobile />
         </div>

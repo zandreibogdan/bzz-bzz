@@ -18,10 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className=" min-h-dvh">
+      <body>
         <ThemeProvider attribute="class">
           <Navbar />
-          {children}
+          <div className="mt-16">{children}</div>
         </ThemeProvider>
       </body>
     </html>

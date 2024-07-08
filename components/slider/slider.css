@@ -1,19 +1,22 @@
-/* styles/slider.css */
-
 .custom-dots {
   display: flex !important;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 4%; /* Adjust the distance from the bottom of the slider */
+  left: 42%;
+  width: 100%; /* Ensure the dots span the full width of the slider */
   padding: 0;
   list-style: none;
+  flex-wrap: nowrap;
+  z-index: 10; /* Ensure dots are above the slider content */
 }
 
 .custom-dots li {
-  position: relative;
   display: inline-block;
   width: 16px;
   height: 16px;
-  margin: 0 5px;
-  padding: 0;
+  margin: 0 10px;
   cursor: pointer;
 }
 
@@ -23,7 +26,7 @@
   display: block;
   width: 16px;
   height: 16px;
-  padding: 4px;
+  padding: 6px;
   cursor: pointer;
   border: 0;
   outline: none;
@@ -31,11 +34,8 @@
 }
 
 .custom-dots li button:before {
-  font-size: 16px;
+  font-size: 42px;
   line-height: 16px;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 16px;
   height: 16px;
   content: "•";
@@ -47,5 +47,22 @@
 
 .custom-dots li.slick-active button:before {
   color: var(--primary); /* Customize the active dot color */
+  font-size: 48px;
   opacity: 1;
+}
+
+.image-slider1 {
+  background-image: url("../../public/beekeeper.jpg");
+}
+
+.image-slider2 {
+  background-image: url("../../public/beehive.jpg");
+}
+
+.image-slider3 {
+  background-image: url("../../public/bee.jpg");
+}
+
+.slick-slide {
+  border: 1px solid var(--primary) !important;
 }

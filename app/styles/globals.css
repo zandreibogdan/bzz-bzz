@@ -1,65 +1,21 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-body {
-  @apply bg-offWhite text-darkSlateGray;
-}
-
-a {
-  @apply text-honeyYellow;
-}
-
-button {
-  @apply bg-honeyYellow text-darkBrown;
-}
-
-.navbar,
-.footer {
-  @apply bg-darkBrown text-offWhite;
-}
-
-.transition {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-duration: 300ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-} */
-
-/* styles/globals.css */
-
 @import "../../components/slider/slider.css";
 @import "./variables.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 body {
   color: var(--text);
   background-color: var(--background);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .slick-slide {
