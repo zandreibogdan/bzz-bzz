@@ -4,13 +4,7 @@ import React from "react";
 import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-interface Slide {
-  id: number;
-  title: string;
-  subtitle: string;
-  sliderImage: string;
-}
+import { HomeSlide } from "./HomeSlide";
 
 const slides: Slide[] = [
   {
@@ -55,20 +49,13 @@ const SliderComponent: React.FC = () => {
     <div>
       <Slider {...settings}>
         {slides.map((slide) => (
-          <div
-            key={slide.id}
-            className={`!flex flex-col justify-center ${
-              slide.id % 2 == 0 ? "items-end" : "items-start"
-            } bg-background border-none bg-cover bg-center w-screen h-screen z-50 !p-0 ${
-              slide.sliderImage
-            }`}
-          >
-            <div className="w-80 m-[10%] ">
-              <div className="bg-gray-900 bg-opacity-50">
-                <h1 className=" ">{slide.title}</h1>
-                <h5>{slide.subtitle}</h5>
-              </div>
-            </div>
+          <div key={slide.id}>
+            <HomeSlide
+              sliderImage={slide.sliderImage}
+              id={slide.id}
+              title={slide.title}
+              subtitle={slide.subtitle}
+            />
           </div>
         ))}
       </Slider>
