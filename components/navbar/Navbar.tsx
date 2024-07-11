@@ -21,6 +21,10 @@ const Navbar = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  const closeNavbar = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -101,10 +105,20 @@ const Navbar = () => {
 
       <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <NavLink href="/" text="Home" mobile />
-          <NavLink href="/products" text="Products" mobile />
-          <NavLink href="/services" text="Services" mobile />
-          <NavLink href="/pages" text="Pages" mobile />
+          <NavLink href="/" text="Home" mobile onClick={closeNavbar} />
+          <NavLink
+            href="/products"
+            text="Products"
+            onClick={closeNavbar}
+            mobile
+          />
+          <NavLink
+            href="/services"
+            text="Services"
+            onClick={closeNavbar}
+            mobile
+          />
+          <NavLink href="/pages" text="Pages" onClick={closeNavbar} mobile />
         </div>
       </div>
     </nav>

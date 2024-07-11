@@ -6,11 +6,12 @@ interface NavLinkProps {
   href: string;
   text: string;
   mobile?: boolean;
+  onClick?: () => void;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ href, text, mobile }) => {
+const NavLink: React.FC<NavLinkProps> = ({ href, text, mobile, onClick }) => {
   return (
-    <Link href={href}>
+    <Link href={href} onClick={onClick}>
       <div
         className={`${
           mobile ? "block" : "inline-block"
