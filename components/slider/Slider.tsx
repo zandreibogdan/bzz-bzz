@@ -5,6 +5,7 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { HomeSlide } from "./HomeSlide";
+import Hero from "./Hero";
 
 const slides: Slide[] = [
   {
@@ -50,7 +51,13 @@ const SliderComponent: React.FC = () => {
       <Slider {...settings}>
         {slides.map((slide) => (
           <div key={slide.id}>
-            <HomeSlide
+            {/* <HomeSlide
+              sliderImage={slide.sliderImage}
+              id={slide.id}
+              title={slide.title}
+              subtitle={slide.subtitle}
+            /> */}
+            <Hero
               sliderImage={slide.sliderImage}
               id={slide.id}
               title={slide.title}
