@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./styles/globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import { ThemeProvider } from "next-themes";
+import ScrollToTopButton from "@/components/bee-button/ScrollToTopButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <Navbar />
           <div className="mt-16">{children}</div>
+          <ScrollToTopButton />
         </ThemeProvider>
       </body>
     </html>

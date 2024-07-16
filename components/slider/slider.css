@@ -12,6 +12,11 @@
   z-index: 10; /* Ensure dots are above the slider content */
 }
 
+@media (max-width: 768px) {
+  .custom-dots {
+    left: 30%;
+  }
+}
 .custom-dots li {
   display: inline-block;
   width: 16px;
